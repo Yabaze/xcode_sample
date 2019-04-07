@@ -13,6 +13,7 @@
 		E94787FB2259E356008CB1C8 /* FoodTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E94787F92259E356008CB1C8 /* FoodTracker.xcdatamodeld */; };
 		E94787FD2259E359008CB1C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E94787FC2259E359008CB1C8 /* Assets.xcassets */; };
 		E94788002259E359008CB1C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E94787FE2259E359008CB1C8 /* LaunchScreen.storyboard */; };
+		E94788082259ED62008CB1C8 /* CommonFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94788072259ED62008CB1C8 /* CommonFunctions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		E94787FC2259E359008CB1C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E94787FF2259E359008CB1C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E94788012259E359008CB1C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E94788072259ED62008CB1C8 /* CommonFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonFunctions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				E94787FE2259E359008CB1C8 /* LaunchScreen.storyboard */,
 				E94788012259E359008CB1C8 /* Info.plist */,
 				E94787F92259E356008CB1C8 /* FoodTracker.xcdatamodeld */,
+				E94788072259ED62008CB1C8 /* CommonFunctions.swift */,
 			);
 			path = FoodTracker;
 			sourceTree = "<group>";
@@ -140,6 +143,7 @@
 			files = (
 				E94787F52259E356008CB1C8 /* ViewController.swift in Sources */,
 				E94787F32259E356008CB1C8 /* AppDelegate.swift in Sources */,
+				E94788082259ED62008CB1C8 /* CommonFunctions.swift in Sources */,
 				E94787FB2259E356008CB1C8 /* FoodTracker.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -286,7 +290,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = FoodTracker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -294,6 +300,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.agni.FoodTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -303,7 +310,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = FoodTracker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -311,6 +320,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.agni.FoodTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
