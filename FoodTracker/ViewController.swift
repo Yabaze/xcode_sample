@@ -72,6 +72,7 @@ class ViewController: UIViewController ,UITextFieldDelegate {
     }
     
     func clearTextFields() {
+        print("hi")
         principal.text = ""
         numberOfYears.text = ""
         rateOfInterest.text = ""
