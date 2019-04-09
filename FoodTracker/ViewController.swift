@@ -15,6 +15,8 @@ class ViewController: UIViewController ,UITextFieldDelegate {
     @IBOutlet weak var rateOfInterest: UITextField!
     @IBOutlet weak var interestResult: UILabel!
     
+    var db  = DatabaseHelper.init()
+    
     @IBAction func calculate(_ sender: UIButton) {
         
         guard let principalAmount  = Double(principal.text!)
@@ -46,6 +48,12 @@ class ViewController: UIViewController ,UITextFieldDelegate {
         
         interestResult.text = "Result \(result)"
         
+        let calculation:Calculation = Calculation.init(principal: "\(principalAmount)", numberOfYears: "\(numberOfYears)", rateOfInterest: "\(rateOfInterest)")
+        
+        db.insertCalculation(calculation : calculation)
+        
+        db.retrieveCalculation()
+        
         clearTextFields()
         
     }
@@ -53,6 +61,7 @@ class ViewController: UIViewController ,UITextFieldDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         principal.delegate = self
+                
     }
     
     func showToast(controller: UIViewController, message : String, seconds: Double){
@@ -72,7 +81,6 @@ class ViewController: UIViewController ,UITextFieldDelegate {
     }
     
     func clearTextFields() {
-        print("hi")
         principal.text = ""
         numberOfYears.text = ""
         rateOfInterest.text = ""

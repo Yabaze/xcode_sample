@@ -14,6 +14,10 @@
 		E94787FD2259E359008CB1C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E94787FC2259E359008CB1C8 /* Assets.xcassets */; };
 		E94788002259E359008CB1C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E94787FE2259E359008CB1C8 /* LaunchScreen.storyboard */; };
 		E94788082259ED62008CB1C8 /* CommonFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94788072259ED62008CB1C8 /* CommonFunctions.swift */; };
+		E9D8D27B225D0261006F6552 /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D8D27A225D0261006F6552 /* DatabaseHelper.swift */; };
+		E9D8D27D225D02F5006F6552 /* CalculationTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D8D27C225D02F5006F6552 /* CalculationTable.swift */; };
+		E9D8D280225D0ADC006F6552 /* Calculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D8D27F225D0ADC006F6552 /* Calculation.swift */; };
+		E9D8D283225D0EA7006F6552 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E9D8D282225D0EA7006F6552 /* libsqlite3.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		E94787FF2259E359008CB1C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E94788012259E359008CB1C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E94788072259ED62008CB1C8 /* CommonFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonFunctions.swift; sourceTree = "<group>"; };
+		E9D8D27A225D0261006F6552 /* DatabaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseHelper.swift; sourceTree = "<group>"; };
+		E9D8D27C225D02F5006F6552 /* CalculationTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationTable.swift; sourceTree = "<group>"; };
+		E9D8D27F225D0ADC006F6552 /* Calculation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculation.swift; sourceTree = "<group>"; };
+		E9D8D282225D0EA7006F6552 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9D8D283225D0EA7006F6552 /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +53,7 @@
 			children = (
 				E94787F12259E356008CB1C8 /* FoodTracker */,
 				E94787F02259E356008CB1C8 /* Products */,
+				E9D8D281225D0EA7006F6552 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -66,8 +76,27 @@
 				E94788012259E359008CB1C8 /* Info.plist */,
 				E94787F92259E356008CB1C8 /* FoodTracker.xcdatamodeld */,
 				E94788072259ED62008CB1C8 /* CommonFunctions.swift */,
+				E9D8D27E225D0301006F6552 /* Database */,
 			);
 			path = FoodTracker;
+			sourceTree = "<group>";
+		};
+		E9D8D27E225D0301006F6552 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				E9D8D27A225D0261006F6552 /* DatabaseHelper.swift */,
+				E9D8D27C225D02F5006F6552 /* CalculationTable.swift */,
+				E9D8D27F225D0ADC006F6552 /* Calculation.swift */,
+			);
+			name = Database;
+			sourceTree = "<group>";
+		};
+		E9D8D281225D0EA7006F6552 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E9D8D282225D0EA7006F6552 /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,7 +170,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9D8D280225D0ADC006F6552 /* Calculation.swift in Sources */,
+				E9D8D27D225D02F5006F6552 /* CalculationTable.swift in Sources */,
 				E94787F52259E356008CB1C8 /* ViewController.swift in Sources */,
+				E9D8D27B225D0261006F6552 /* DatabaseHelper.swift in Sources */,
 				E94787F32259E356008CB1C8 /* AppDelegate.swift in Sources */,
 				E94788082259ED62008CB1C8 /* CommonFunctions.swift in Sources */,
 				E94787FB2259E356008CB1C8 /* FoodTracker.xcdatamodeld in Sources */,
