@@ -52,8 +52,6 @@ class ViewController: UIViewController ,UITextFieldDelegate {
         
         db.insertCalculation(calculation : calculation)
         
-        db.retrieveCalculation()
-        
         clearTextFields()
         
     }
@@ -61,7 +59,8 @@ class ViewController: UIViewController ,UITextFieldDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         principal.delegate = self
-                
+        _ = db.retrieveCalculation()
+
     }
     
     func showToast(controller: UIViewController, message : String, seconds: Double){

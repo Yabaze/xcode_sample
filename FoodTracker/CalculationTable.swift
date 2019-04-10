@@ -30,6 +30,5 @@ class CalculationTable {
         
         self.CREATE_TABLE =  "CREATE TABLE IF NOT EXISTS " + TABLE_NAME + "(" + ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + PRINCIPAL + " TEXT," + NUMBER_OF_YEARS + " TEXT," + RATE_OF_INTEREST + " TEXT NOT NULL)";
     }
-
     
 }

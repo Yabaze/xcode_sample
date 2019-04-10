@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 import Foundation
 import SQLite3
 
@@ -87,23 +86,27 @@ class DatabaseHelper{
         sqlite3_finalize(insertStatement)
     }
     
-    func retrieveCalculation() {
+    func retrieveCalculation() -> Array<CalculationPojo> {
         var queryStatement: OpaquePointer? = nil
-        
+
+        var calculationsArray : Array<CalculationPojo> = Array()
+
         if sqlite3_prepare_v2(db, calculationTable.RETRIVE_ALL , -1, &queryStatement, nil) == SQLITE_OK {
             
             while sqlite3_step(queryStatement) == SQLITE_ROW {
                 
                 let id = sqlite3_column_int(queryStatement, 0)
                 
-                let principal = Double (String(cString: sqlite3_column_text(queryStatement, 1)!))
+                let principal = String(cString: sqlite3_column_text(queryStatement, 1)!)
                 
-                let numberOfYears = Double (String(cString: sqlite3_column_text(queryStatement, 2)!))
+                let numberOfYears = String(cString: sqlite3_column_text(queryStatement, 2)!)
                 
-                let rateOfInterest = Double (String(cString: sqlite3_column_text(queryStatement, 3)!))
+                let rateOfInterest = String(cString: sqlite3_column_text(queryStatement, 3)!)
                 
-                let interest = principal! * numberOfYears! * rateOfInterest! / 100
+                let interest = Double(principal)! * Double(numberOfYears)! * Double(rateOfInterest)! / 100
                 
+            
+                calculationsArray.append(CalculationPojo.init(principal: principal, numberOfYears: numberOfYears, rateOfInterest: rateOfInterest)!)
                 
                 print("\(id)| \(String(describing: principal)) | \(String(describing: numberOfYears)) | \(String(describing: rateOfInterest)) | \(String(describing: interest)) ")
             }
@@ -111,5 +114,6 @@ class DatabaseHelper{
             print("SELECT statement could not be prepared")
         }
         sqlite3_finalize(queryStatement)
+        return calculationsArray
     }
 }
